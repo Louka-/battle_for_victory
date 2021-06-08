@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Plateau de joueur{% endblock %}
+
+{% block body %}
+	<div class="container mt-4">
+		<div class="row justify-content-center">
+        <img src="{{asset('images/fond-texte.png')}}" alt="" class="position-absolute">
+			<div class="col-12">
+				<h1 class="text-center my-5">Créer un plateau de joueur</h1>
+
+    {{ include('plateau_de_joueur/_form.html.twig') }}
+
+    <div class="d-flex justify-content-center pt-3">
+    <a href="{{ path('plateau_de_joueur_index') }}" class="btn btn-info rounded-pill">Retour</a>
+    </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

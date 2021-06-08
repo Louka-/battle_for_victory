@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Règles de jeu
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-4">
+		<div class="row justify-content-center">
+            <img src="{{asset('images/fond-texte.png')}}" alt="" class="position-absolute">
+			<div class="col-12">
+				<h1 class="text-center mt-5">Règles de jeu</h1>
+				<div>
+
+                    <div class="row">
+                        <div class="col-4">
+                        <h3 class="my-3 text-center">Tour 1</h3>
+					        <div>Les joueurs commencent la partie avec 6 cartes ressources en main. 
+                            Au début de ce tour, les joueurs peuvent poser jusqu'à 4 cartes ressource sur leur plateau. 
+                            Ils peuvent également décider de revendre leurs cartes contre de l'or si aucune des cartes dont ils disposent ne les intéressent. 
+                            Une fois les actions terminées, ils clôturent leur tour en piochant 4 nouvelles cartes ressource.
+					        </div>
+                        </div>
+                        <div class="col-4">
+                        <h3 class="my-3 text-center">Tour 2</h3>
+                            <div>Les joueurs commencent ce tour en piochant 2 cartes Force Militaire et 2 cartes Structure Défensive. 
+                            Ils ont ensuite la possibilité de jouer jusqu'à 2 cartes, tout type confondu, à conditions de disposer des ressources et pièces d'or nécessaire. 
+                            Une fois la carte jouée, le joueur devra défausser les cartes ressources utilisées et réduire sont score de pièces d'or du montant équivalent.
+                            Si aucune des cartes qu'ils ont a leur disposition ne les intéressent ou, s'il n'ont pas les ressources et pièces d'or nécessaires, ils peuvent décider de revendre jusqu'à 2 cartes de leur choix. 
+                            Une fois les actions terminées, ils cloturent leur tour en piochant 4 nouvelles cartes ressource.</div>
+                        </div>
+                        <div class="col-4">
+                        <h3 class="my-3 text-center">Tour 3</h3>
+                            <div>Les joueurs commencent ce dernier tour en déclarant leurs intentions.
+                            Ils peuvent décider d'attaquer n'importe quel autre joueur ou ne rien faire.
+                            Une fois les annonce faites, il faut maintenant résoudre les actions.
+                            L'attaquant et le défenseur lancent chacun un dés 6 et ajoutent leur bonus de FM/SD. Celui qui obtient le meilleur score gagne le combat. <br>
+                            Si l'attaquant gagne: il peut récupérer une carte ressource de son choix ou 5 pièces d'or, dans la main du défenseur. Il gagne également 1 Point de Victoire. <br> 
+                            Si l'attaquant perd: Il perd 1 Point de Victoire et le défenseur gagne 1 Point de Victoire. <br>
+                            Le total de Point de Victoire ne peut être inférieur à 0.
+                            </div>
+                        </div>
+                    </div>	    
+				</div>
+				<div class="text-center my-4">
+                <span>
+                Répéter ces trois tours, trois fois.
+                </span>
+                </div>
+				<div>
+					<h2 class="text-center my-4">Fin de partie</h2>
+                    Une fois les 3 manches terminées, il convient de déterminer le gagnant. Pour ce faire, les joueurs compare leur nombre de Point de Victoire. <br>
+                    - Pour 10 pièces d'or non utilisées, chaque joueur reçoit 1 Point de Victoire supplémentaire. <br>
+                    - Les joueurs doivent également additionner leur bonus de FM et SD, qu'ils divisent par 2 et arrondissent à l'inférieur.
+                    Ce résultat est également ajout à leur score de Point de Victoire. <br>
+                    - Enfin, pour 5 ressources posées et non utilisées, chaque joueur reçoit 1 Point de Victoire supplémentaire. <br>
+                    <div class="text-center my-4">
+                    <span>
+                        Le joueur qui possède le plus haut score gagne la partie.
+                    </span>
+                    </div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}

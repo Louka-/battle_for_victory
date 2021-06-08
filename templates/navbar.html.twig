@@ -1,0 +1,28 @@
+
+<nav class="navbar navbar-expand-lg sticky-top bg-fond justify-content-around">
+
+
+{% if is_granted('ROLE_USER') %}
+{% else %}
+  <a class="navbar-brand text-bouton" href="{{ path('app_login') }}">Accueil</a>
+{% endif %}
+
+  <a class="navbar-brand text-bouton" href="{{ path('page_regles') }}">Règles de jeu</a>
+  <a class="navbar-brand text-bouton" href="{{ path('plateau_de_joueur_index') }}">Plateau de joueur</a>
+  <a class="navbar-brand text-bouton" href="{{ path('ressource_index') }}">Ressources</a>
+  <a class="navbar-brand text-bouton" href="{{ path('carte_index') }}">Cartes</a>
+
+{% if is_granted('ROLE_USER') %}
+
+  <div class="navbar-nav">
+
+    <a class="navbar-brand text-bouton" href="{{ path('app_logout') }}">Déconnexion</a>
+
+
+  </div>
+        <div class="text-bouton">Bonjour {{app.user.email}}, vous êtes connecté!</div>
+
+{% endif %}
+
+</nav>
+

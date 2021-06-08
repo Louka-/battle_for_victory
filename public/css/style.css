@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.titre{
+    width: 60%;
+    height: auto;
+}
+
+.fond{
+    width: auto;
+    max-height: 100vh;
+}
+
+
+body {
+    background-image: url("../images/fond.jpg");
+    background-repeat: no-repeat;
+    font-family: 'Poppins', sans-serif;
+  }
+
+.carte{
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.356);
+    border-radius: 30px;
+}
+
+h3, h2, h1{
+    font-family: River Adventurer;
+    color: #8E5F21;
+}
+.titreCarte {
+    font-family: River Adventurer;
+    color: #F6EDB7;
+    font-size: 28px;
+}
+
+@font-face {
+    font-family: 'River Adventurer';
+    src: url('./font/River.Adventurer.ttf');
+}
+
+.bg-fond{
+    background-color: rgba(0, 0, 0, 0.664);
+}
+
+span{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.text-bouton{
+    color: #F6EDB7;
+    font-size: 18px;
+}
+
+/* .ressource1 {
+
+} */
+
+.nomCarte {
+    height: 100px;
+}
+
+.photo {
+    height: 250px;
+    padding-top: 36px;
+}
+
+.photo2 {
+    height: 290px;
+    padding-top: 36px;
+}
+
+.orRessource {
+    height: 136px;
+    width: 306px;
+}
+
+.or {
+    width: 153px;
+    padding-top: 30px;
+    font-family: River Adventurer;
+    /* color: #F6EDB7; */
+    font-size: 35px;
+}
+
+.valeurRessource {
+    width: 153px;
+    padding-top: 30px;
+    font-family: River Adventurer;
+    /* color: #F6EDB7; */
+    font-size: 70px;
+}
+
+.coutRessource {
+    padding-left: 55px;
+    height: 42px;
+    font-family: River Adventurer;
+    font-size: 35px;
+    color: white;
+}
+
+ul li {
+list-style:none;
+color: rgba(255, 0, 0, 0.753);
+}
+
+.research_form{
+    font-size: 13px;
+}
+
+select {
+    width: 100%;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+}
+input {
+    width: 100%;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+
+
+.double_select_left select{
+    width:100px; 
+    margin-right:5px;
+}
+
+.double_select_right select{
+    width:100px; 
+    margin-left:5px;
+}
+
+label {
+    padding-top: 10px;
+    color: black;
+    font-family: River Adventurer;
+    font-size: 20px;
+}
+
+.hauteur {
+    height: 720px;
+}
+
+.bg-img {
+    background-image: url(../images/fond-texte.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.wh {
+    width: 1200px;
+    height: 1000px;
+}
+
+
+
+

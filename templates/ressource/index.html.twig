@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ressource{% endblock %}
+
+{% block body %}
+	<div class="container mt-4">
+		<div class="justify-content-center">
+			<div class="col-12 ">
+                <figure class="d-flex justify-content-center">
+                    <img src="{{asset('images/fond-texte.png')}}" alt="" class="position-absolute">
+                </figure>
+
+                <div class="position-relative">
+                        <h1 class="text-center my-5">Ressource</h1>
+
+            <table class="table text-center">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nom de la ressource</th>
+                        <th>Actions</th>
+                        {% if is_granted('ROLE_USER') %}
+                        <th>Supprimer</th>
+                        {% else %}
+                        {% endif %}
+                    </tr>
+                </thead>
+                <tbody>
+                {% for ressource in ressources %}
+                    <tr>
+                        <td>{{ ressource.id }}</td>
+                        <td>{{ ressource.name }}</td>
+                        <td>
+                            <a class="btn btn-info rounded-pill" href="{{ path('ressource_show', {'id': ressource.id}) }}">Détail</a>
+                            {% if is_granted('ROLE_USER') %}
+                            <a class="btn btn-success rounded-pill" href="{{ path('ressource_edit', {'id': ressource.id}) }}">Editer</a>
+                            {% else %}
+                            {% endif %}
+                        </td>
+                        {% if is_granted('ROLE_USER') %}
+                        <td>
+                            {{ include('ressource/_delete_form.html.twig') }}
+                        </td>
+                        {% else %}
+                        {% endif %}
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="3">Aucune ressource disponible</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+                        <div class="d-flex justify-content-center">
+                            <a class="btn btn-danger rounded-pill" href="{{ path('ressource_new') }}">Nouvelle Ressource</a>
+                        </div>
+                
+                </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

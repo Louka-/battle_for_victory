@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PlateauDeJoueur{% endblock %}
+
+{% block body %}
+	<div class="container mt-4">
+		<div class="row justify-content-center">
+            <img src="{{asset('images/fond-texte.png')}}" alt="" class="position-absolute">
+			<div class="col-12">
+
+            <h1 class="text-center mt-5">PlateauDeJoueur</h1>
+
+    <table class="table mt-3">
+        <tbody>
+            <tr>
+                <th>Race</th>
+                <td>{{ plateau_de_joueur.race }}</td>
+            </tr>
+            <tr>
+                <th>Force de base</th>
+                <td>{{ plateau_de_joueur.forBase }}</td>
+            </tr>
+            <tr>
+                <th>Défense de base</th>
+                <td>{{ plateau_de_joueur.defBase }}</td>
+            </tr>
+            <tr>
+                <th>Or de base</th>
+                <td>{{ plateau_de_joueur.goldBase }}</td>
+            </tr>
+            <tr>
+                <th>Capacité spéciale</th>
+                <td>{{ plateau_de_joueur.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    {% if is_granted('ROLE_USER') %}
+
+    <div class="d-flex justify-content-center pt-3">
+        <a href="{{ path('plateau_de_joueur_edit', {'id': plateau_de_joueur.id}) }}" class="btn btn-success rounded-pill">Editer</a>   
+    </div>
+
+    <div class="d-flex justify-content-center pt-3">
+        {{ include('plateau_de_joueur/_delete_form.html.twig') }}        
+    </div>
+
+    {% else %}
+    {% endif %}
+
+    <div class="d-flex justify-content-center pt-3">
+        <a href="{{ path('plateau_de_joueur_index') }}" class="btn btn-info rounded-pill">Retour</a>
+    </div>
+
+    			</div>
+		</div>
+	</div>
+
+{% endblock %}

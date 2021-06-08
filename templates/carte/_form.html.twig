@@ -1,0 +1,121 @@
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {# Run `composer require symfony/webpack-encore-bundle`
+        and uncomment the following Encore helpers to start using Symfony UX #}
+    {% block stylesheets %}
+        {#{{ encore_entry_link_tags('app') }}#}
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+    {% endblock %}
+
+    {% block javascripts %}
+        {#{{ encore_entry_script_tags('app') }}#}
+    {% endblock %}
+</head>
+
+{% block body %}
+        {{ form_start(form) }}
+<div class="d-flex justify-content-center">
+    <div class="research_form col-6">
+        <form method="post">
+            <div id="searchadvertisment_form">
+                {{ form_label(form.name) }}
+            <span>
+                    {{ form_errors(form.name) }}
+            </span>
+                {{ form_widget(form.name) }}
+
+                {{ form_label(form.bonus) }}
+            <span>
+                    {{ form_errors(form.bonus) }}
+            </span>
+                {{ form_widget(form.bonus) }}
+
+                {{ form_label(form.gold) }}
+            <span>
+                    {{ form_errors(form.gold) }}
+            </span>
+                {{ form_widget(form.gold) }}
+
+
+            {{ form_label(form.cost) }}
+
+            <div class="double_select">
+                    
+                <span>
+                    {{ form_errors(form.ressource) }}
+                    {{ form_errors(form.cost) }}
+                </span>
+
+                <span class="double_select_left">
+
+                    {{ form_widget(form.cost) }}
+
+                </span>
+
+                de
+
+                <span class="double_select_right">
+
+                    {{ form_widget(form.ressource) }}
+
+                </span>
+            </div>
+            <div class="double_select pt-2">
+                <span class="double_select_left">
+
+                    {{ form_widget(form.cost2) }}
+
+                </span>
+
+                de
+
+                <span class="double_select_right">
+
+                    {{ form_widget(form.ressource2) }}
+
+                </span>
+            </div>
+            <div class="double_select pt-2">
+                <span class="double_select_left">
+
+                    {{ form_widget(form.cost3) }}
+
+                </span>
+
+                de
+
+                <span class="double_select_right">
+
+                    {{ form_widget(form.ressource3) }}
+
+                </span>
+            </div>
+            <div id="searchadvertisment_form">
+
+                {{ form_label(form.image) }}
+                <span>
+                    {{ form_errors(form.image) }}
+                </span>
+                {{ form_widget(form.image) }}
+
+            </div>
+            <div id="searchadvertisment_form">
+
+                {{ form_row(form.style) }}
+
+            </div>
+
+
+            {{ form_widget(form._token) }}
+            <div class="d-flex justify-content-center pt-3">
+                <button class="btn btn-success rounded-pill">{{ button_label|default('Enregistrer') }}</button>
+            </div>
+        </form>
+    </div>
+</div>
+        {{ form_end(form) }}
+
+{% endblock %}

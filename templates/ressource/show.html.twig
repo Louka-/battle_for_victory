@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ressource{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col-12 d-flex justify-content-center mt-5">
+            <figure>
+					<img src="{{asset('images/ressource.png')}}" alt="" class="carte">
+			</figure>
+
+
+<div class="col-4-lg col-6-sm position-absolute">
+					<div class="text-center nomCarte d-flex align-items-end justify-content-center">
+						<div class="titreCarte">{{ ressource.name }}</div>
+					</div>
+
+					<div class="photo2 d-flex align-items-center justify-content-center">
+							<img src="{{asset('images/picto/picto_'~ressource.ressource)}}" alt="">
+					</div>
+
+					<div class="d-flex justify-content-center">
+						<div class="orRessource row d-flex justify-content-center justify-self-center">
+							<div class="valeurRessource d-flex justify-content-center align-items-center">{{ ressource.cost }}</div>	
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+        </div>
+			<div class="container">
+				<div class="row pt-3">
+					<div class="col-12 d-flex justify-content-center align-items-end">
+						<div class="col-6 d-flex justify-content-around">
+							<a class="btn btn-info rounded-pill" href="{{ path('ressource_index') }}">Retour</a>
+							{% if is_granted('ROLE_USER') %}
+							<a class="btn btn-success rounded-pill" href="{{ path('ressource_edit', {'id': ressource.id}) }}">Editer</a>
+							{{ include('ressource/_delete_form.html.twig') }}
+							{% else %}
+    						{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+    </div>
+</div>
+{% endblock %}

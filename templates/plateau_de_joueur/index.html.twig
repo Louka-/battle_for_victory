@@ -1,0 +1,58 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Plateau de joueur{% endblock %}
+
+{% block body %}
+	<div class="container mt-4">
+		<div class="row justify-content-center">
+        <img src="{{asset('images/fond-texte.png')}}" alt="" class="position-absolute">
+			<div class="col-12">
+				<h1 class="text-center my-5">Plateau de joueur</h1>
+
+    <table class="table text-center">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Race</th>
+                <th>Actions</th>
+                {% if is_granted('ROLE_USER') %}
+                <th>Supprimer</th>
+                {% else %}
+                {% endif %}
+            </tr>
+        </thead>
+        <tbody>
+        {% for plateau_de_joueur in plateau_de_joueurs %}
+            <tr>
+                <td>{{ plateau_de_joueur.id }}</td>
+                <td>{{ plateau_de_joueur.race }}</td>
+                <td>
+                    <a href="{{ path('plateau_de_joueur_show', {'id': plateau_de_joueur.id}) }}" class="btn btn-info rounded-pill">Detail</a>
+                {% if is_granted('ROLE_USER') %}
+                    <a href="{{ path('plateau_de_joueur_edit', {'id': plateau_de_joueur.id}) }}" class="btn btn-success rounded-pill">Editer</a>
+                    {% else %}
+                    {% endif %}
+                </td>
+                {% if is_granted('ROLE_USER') %}
+                    <td>
+                    {{ include('plateau_de_joueur/_delete_form.html.twig') }}   
+                    </td>
+                    {% else %}
+                    {% endif %}
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">Aucune race disponible</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<div class="d-flex justify-content-center">
+    <a href="{{ path('plateau_de_joueur_new') }}" class="btn btn-danger rounded-pill">Nouvelle race</a>
+</div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
